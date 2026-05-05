@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad de El Salado – Memoria, dolor y resiliencia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-earth: #F5F1E9;
+            --color-dark: #2C241F;
+            --color-accent: #7F1D1D; /* Rojo oscuro */
+        }
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--color-earth);
+            color: var(--color-dark);
+            overflow: hidden;
+        }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            animation: fadeIn 1s ease-out;
+        }
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; height: 4px;
+            background: var(--color-accent);
+            transition: width 0.5s ease;
+            z-index: 100;
+        }
+
+        .btn-nav {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s;
+        }
+        .btn-nav:hover { background: rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progress"></div>
+    <div class="grain"></div>
+
+    <!-- DIAPOSITIVA 1: PORTADA -->
+    <section class="slide active relative items-center justify-center text-center text-white" id="slide-1">
+        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1544933863-482c6caef6d7?auto=format&fit=crop&q=80&w=2000');"></div>
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="relative z-20 px-6">
+            <h1 class="text-6xl md:text-8xl font-sans font-bold tracking-tighter mb-4">COMUNIDAD DE EL SALADO</h1>
+            <p class="text-xl md:text-3xl font-light italic opacity-90">Memoria, violencia y resiliencia</p>
+            <div class="mt-20 text-sm uppercase tracking-widest opacity-70">Desliza o usa las flechas para comenzar</div>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 2: UBICACIÓN -->
+    <section class="slide bg-white flex-col md:flex-row" id="slide-2">
+        <div class="w-full md:w-[60%] p-12 md:p-24 flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-sans font-bold text-red-900 mb-8">¿Dónde queda El Salado?</h2>
+            <ul class="space-y-6 text-xl text-gray-700 mb-12">
+                <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-red-800"></span> Corregimiento de El Carmen de Bolívar</li>
+                <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-red-800"></span> Región Montes de María</li>
+                <li class="flex items-center gap-4"><span class="w-2 h-2 rounded-full bg-red-800"></span> Zona rural del Caribe colombiano</li>
+            </ul>
+            <div class="p-6 bg-red-50 border-l-4 border-red-800 italic text-red-950 text-lg">
+                Ubicado en una zona estratégica del conflicto armado.
+            </div>
+        </div>
+        <div class="w-full md:w-[40%] bg-stone-200 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover grayscale-[0.2]" alt="Mapa">
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 3: CONTEXTO -->
+    <section class="slide items-center justify-center p-12" id="slide-3" style="background-image: url('https://www.transparenttextures.com/patterns/old-map.png');">
+        <div class="max-w-6xl w-full">
+            <h2 class="text-4xl md:text-5xl font-sans font-bold text-center mb-16">Contexto antes del 2000</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/80 p-8 rounded-xl shadow-sm border border-stone-200 text-center">
+                    <h3 class="text-2xl font-bold font-sans mb-4 text-red-900">Guerrilla</h3>
+                    <p class="text-stone-600">Presencia histórica y control territorial en la zona rural.</p>
+                </div>
+                <div class="bg-white/80 p-8 rounded-xl shadow-sm border border-stone-200 text-center">
+                    <h3 class="text-2xl font-bold font-sans mb-4 text-red-900">Paramilitares</h3>
+                    <p class="text-stone-600">Llegada de bloques para disputar el poder y el territorio.</p>
+                </div>
+                <div class="bg-white/80 p-8 rounded-xl shadow-sm border border-stone-200 text-center">
+                    <h3 class="text-2xl font-bold font-sans mb-4 text-red-900">Población</h3>
+                    <p class="text-stone-600">Campesinos vulnerables atrapados en medio del conflicto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 4: LA MASACRE -->
+    <section class="slide bg-black text-white items-center justify-center text-center p-12" id="slide-4">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover blur-sm" alt="Impacto">
+        </div>
+        <div class="relative z-20 max-w-4xl">
+            <h2 class="text-4xl md:text-6xl font-sans font-bold mb-8 uppercase tracking-tighter text-red-500">La masacre de El Salado</h2>
+            <p class="text-2xl mb-4 font-light italic">Febrero del 2000</p>
+            <div class="h-px bg-white/20 w-full my-12"></div>
+            <p class="text-2xl md:text-4xl italic font-serif text-gray-300">“El miedo se convirtió en silencio”</p>
+            <p class="mt-12 text-lg opacity-60">Más de 60 víctimas y días de violencia extrema.</p>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 5: CONSECUENCIAS -->
+    <section class="slide flex-col md:flex-row-reverse bg-[#2C241F] text-white" id="slide-5">
+        <div class="w-full md:w-[60%] p-12 md:p-24 flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-sans font-bold text-red-400 mb-8">Consecuencias</h2>
+            <div class="space-y-6">
+                <div class="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded">
+                    <span class="text-2xl font-light">Desplazamiento masivo y abandono</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded">
+                    <span class="text-2xl font-light">Trauma psicológico profundo</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded">
+                    <span class="text-2xl font-light">Ruptura del tejido social</span>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-[40%]">
+            <img src="https://images.unsplash.com/photo-1518112391138-0c324901f464?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover opacity-60" alt="Consecuencias">
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 6: EL REGRESO -->
+    <section class="slide flex-col items-center justify-center p-12 bg-white" id="slide-6">
+        <div class="max-w-4xl text-center">
+            <h2 class="text-5xl font-sans font-bold text-stone-900 mb-6">El regreso</h2>
+            <p class="text-2xl text-stone-600 mb-12 italic font-light">Años después, el amor por la tierra fue más fuerte que el miedo.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm">Reconstrucción</h4>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm">Apoyo Mutuo</h4>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm">Territorio</h4>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1490730141103-6ca27d91461f?auto=format&fit=crop&q=80&w=1000" class="mt-16 rounded-2xl shadow-2xl h-64 w-full object-cover" alt="Retorno">
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 7: REFLEXIÓN FINAL -->
+    <section class="slide bg-black text-white items-center justify-center text-center p-12" id="slide-7">
+        <div class="max-w-4xl">
+            <h3 class="text-5xl md:text-7xl font-serif italic mb-12">"Recordar es necesario para no repetir"</h3>
+            <div class="w-24 h-px bg-white/20 mx-auto mb-12"></div>
+            <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+                La historia de El Salado nos enseña la importancia de la memoria, la justicia y la paz.
+            </p>
+        </div>
+    </section>
+
+    <!-- DIAPOSITIVA 8: CIERRE -->
+    <section class="slide items-center justify-center text-center" id="slide-8">
+        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1544933863-482c6caef6d7?auto=format&fit=crop&q=80&w=2000');"></div>
+        <div class="relative z-20">
+            <h2 class="text-7xl font-sans font-bold mb-4">GRACIAS</h2>
+            <p class="text-2xl font-light italic">¿Tienen alguna pregunta?</p>
+            <p class="mt-12 text-sm uppercase tracking-tighter opacity-50">Presentación Finalizada</p>
+        </div>
+    </section>
+
+    <!-- CONTROLES -->
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-8 z-50">
+        <button onclick="changeSlide(-1)" class="btn-nav p-4 rounded-full border border-stone-300">
+            ←
+        </button>
+        <span class="font-sans text-sm tracking-widest opacity-50" id="counter">1 / 8</span>
+        <button onclick="changeSlide(1)" class="btn-nav p-4 rounded-full border border-stone-300">
+            →
+        </button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function updateSlide() {
+            // Ocultar todas
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            // Mostrar actual
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            // Actualizar contador y barra
+            document.getElementById('counter').innerText = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progress').style.width = `${(currentSlide / totalSlides) * 100}%`;
+        }
+
+        function changeSlide(dir) {
+            currentSlide += dir;
+            if (currentSlide < 1) currentSlide = 1;
+            if (currentSlide > totalSlides) currentSlide = totalSlides;
+            updateSlide();
+        }
+
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+
+        // Click para avanzar
+        document.addEventListener('mousedown', (e) => {
+            if(e.target.tagName !== 'BUTTON') changeSlide(1);
+        });
+    </script>
+</body>
+</html>
